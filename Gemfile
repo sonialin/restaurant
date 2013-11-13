@@ -3,8 +3,18 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use pg as the database for deployment on Heroku
+group :production do
+	gem 'pg'
+end
+
+# Use sqlite3 as the database for local
+group :development, :test do
+	gem 'sqlite3'
+end
+
+#Include 'rails_12factor' gem to enable all platform features
+gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#logo {
+	z-index: 2000;
+	left: 20px;
+	position: relative;
+}
+
 #wrapper {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
@@ -10,10 +16,10 @@
 
 #sidebar-wrapper {
   margin-left: -250px;
+  top: 0px;
   left: 250px;
   width: 250px;
-  background-color: #000;
-  opacity: 0.6;
+  background: rgba(0,0,0,0.5);
   position: fixed;
   height: 100%;
   overflow-y: auto;
@@ -23,6 +29,12 @@
 
 #page-content-wrapper {
   width: 100%;
+}
+
+.sidebar-text {
+	position: fixed;
+	display: block;
+	top:200px;
 }
 
 .sidebar-nav {
@@ -93,15 +105,20 @@
 
 @media (max-width:767px) {
 
-/*#wrapper {
+#wrapper {
   padding-left: 0;
-}*/
+}
 
 #sidebar-wrapper {
   left: 0;
-  width: 100%;
 }
-/*
+
+.sidebar-text {
+	position: relative;
+	display: block;
+	top:200px;
+}
+
 #wrapper.active {
   position: relative;
   left: 250px;
@@ -120,5 +137,6 @@
 .inset {
   padding: 15px;
 }
-*/
+
+
 }

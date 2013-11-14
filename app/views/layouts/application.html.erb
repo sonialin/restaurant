@@ -21,28 +21,40 @@
     <li><img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-ash3/553001_353021251465834_1223841724_n.jpg"/></li>
   </ul>
 
-  <%= link_to (image_tag "/images/yaku_logo.png"), '#', :id => "logo" %>
+  <%= link_to (image_tag "/images/yaku_logo.png"), root_path, :id => "logo" %>
 
   <div id="wrapper">
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <div class="sidebar-text">
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Specials</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Location</a></li>
-        <li><a href="#">Contact Us</a></li>
-        </div>
+      <div class="sidebar-text sidebar-nav">
+      <ul>
+        
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Specials</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Reservation</a></li>
+        
       </ul>
+      
+      </div>
     </div>
 
-    
+      <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
+      </h1>
 
+
+    <!-- Page content -->
+    
+  
+      <%= yield %>
+    
   </div>
 
-	<%= yield %>
+	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<%= javascript_include_tag "application" %>

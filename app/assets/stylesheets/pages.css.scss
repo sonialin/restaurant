@@ -6,7 +6,7 @@
 #logo {
 	z-index: 2000;
 	left: 20px;
-	position: relative;
+	position: fixed;
 }
 
 #wrapper {
@@ -28,7 +28,12 @@
 }
 
 #page-content-wrapper {
-  width: 100%;
+  width: 80%;
+  position: relative;
+  top: 150px;
+  left: 10%;
+  background: rgba(0,0,0,0.5);
+  color: #999999;
 }
 
 .sidebar-text {
@@ -38,8 +43,6 @@
 }
 
 .sidebar-nav {
-  position: absolute;
-  top: 0;
   width: 250px;
   list-style: none;
   margin: 0;
@@ -49,6 +52,8 @@
 .sidebar-nav li {
   line-height: 40px;
   text-indent: 20px;
+  font-size: 1.5em;
+  list-style: none;
 }
 
 .sidebar-nav li a {
@@ -132,6 +137,9 @@
 
 #menu-toggle {
   display: inline-block;
+  position: relative;
+  top: 160px;
+  left: 10%;
 }
 
 .inset {

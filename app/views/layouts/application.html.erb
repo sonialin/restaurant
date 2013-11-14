@@ -9,6 +9,11 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
+
+  <!-- Googlemap -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFjnkb_KV6FjLaUFnR0cBZX7qLw5j8Y_M&sensor=false"></script>
+  <script type="text/javascript" src="http://www.map-generator.org/map/iframejs/df9ce65d-0adf-45f2-9e1b-337a4b2c8f27?key=AIzaSyBFjnkb_KV6FjLaUFnR0cBZX7qLw5j8Y_M&width=600px&height=400px"></script>
+
 </head>
 <body>
 
@@ -29,12 +34,12 @@
     <div id="sidebar-wrapper">
       <div class="sidebar-text">
         <ul class="sidebar-nav">       
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><%= link_to "Home", root_path  %></li>
+            <li><a href="about">About Us</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="#">Media Coverage</a></li>
-            <li><a href="#">Location</a></li>
+            <li><%= link_to "Location", location_path  %></li>
             <li><a href="#">Reservation</a></li>          
         </ul>
         
@@ -71,7 +76,6 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<%= javascript_include_tag "application" %>
-  <!-- imagesLoaded jQuery plugin by @desandro : https://github.com/desandro/imagesloaded -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
   <script>
       $(function() {

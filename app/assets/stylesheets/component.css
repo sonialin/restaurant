@@ -8,9 +8,9 @@
 	z-index: -1;
 	padding: 0;
 	margin: 0;
-	-webkit-filter: grayscale(100%);
+/*	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
-	filter: grayscale(100%);
+	filter: grayscale(100%);*/
 }
 
 .cbp-bislideshow li {

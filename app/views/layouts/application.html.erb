@@ -12,43 +12,41 @@
 </head>
 <body>
 
+<ul id="cbp-bislideshow" class="cbp-bislideshow">
+    <li><img src="http://newevolutiondesigns.com/images/freebies/city-wallpaper-1.jpg" alt="image01"/></li>
+    <li><img src="http://nicksphotowalks.files.wordpress.com/2012/04/img_5800_1.jpg" alt="image02"/></li>
+    <li><img src="http://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg" alt="image03"/></li>
+    <li><img src="http://newevolutiondesigns.com/images/freebies/city-wallpaper-4.jpg" alt="image04"/></li>
+    <li><img src="http://newevolutiondesigns.com/images/freebies/city-wallpaper-21.jpg" alt="image05"/></li>
+    <li><img src="http://newevolutiondesigns.com/images/freebies/city-wallpaper-32.jpg" alt="image06"/></li>
+</ul>
+
+
+<!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="#">Brand</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Shortcuts</a></li>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
 	<%= yield %>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<%= javascript_include_tag "application" %>
+  <!-- imagesLoaded jQuery plugin by @desandro : https://github.com/desandro/imagesloaded -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-
-  <!-- Custom JavaScript for the Side Menu and Smooth Scrolling - Put in a custom JavaScript file to clean this up -->
-    <script>
-        $("#menu-close").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-    </script>
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-    </script>
-    <script>
+  <script>
       $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-            || location.hostname == this.hostname) {
-
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
+          cbpBGSlideshow.init();
       });
-    </script>
+  </script>
 
 </body>
 </html>

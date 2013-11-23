@@ -7,13 +7,28 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+  <link href="/stylesheets/jquery.timepicker.css" rel="stylesheet">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"></script>
+  <script type="text/javascript" src="/javascripts/jquery.timepicker.js"></script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      minDate: new Date(),
+    });
+  });
+  </script>
+  <script>
+  $(function() {
+    $('#timepicker').timepicker({
+      minTime: "11am",
+      maxTime: "10pm",
+    });
+  });
+  </script>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
-
-  <!-- Googlemap -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFjnkb_KV6FjLaUFnR0cBZX7qLw5j8Y_M&sensor=false"></script>
-  <script type="text/javascript" src="http://www.map-generator.org/map/iframejs/df9ce65d-0adf-45f2-9e1b-337a4b2c8f27?key=AIzaSyBFjnkb_KV6FjLaUFnR0cBZX7qLw5j8Y_M&width=600px&height=400px"></script>
-
 </head>
 <body>
 
@@ -37,11 +52,10 @@
             <li><%= link_to "Home", root_path  %></li>
             <li><a href="about">About Us</a></li>
             <li><a href="#">Menu</a></li>
-            <li><a href="#">Specials</a></li>
+            <li><%= link_to "Specials", specials_path  %></li>
             <li><a href="#">Media Coverage</a></li>
-<!--             <li><%= link_to "Location", location_path  %></li> -->
             <li><a href="#">Reservation</a></li> 
-            <li><a href="#">Jobs</a></li>          
+            <li><%= link_to "Jobs", jobs_path  %></li>          
         </ul>
         
         <div class="contact-info">
@@ -65,19 +79,27 @@
         <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
       </h1>
 
+      <!-- Hide the reservation input form if the user is already on the new reservation page -->
+      <% unless current_page?(new_reservation_path) %>
+        <section id="reservation"> 
+
+        <input id="datepicker" type="text" />
+        <%= link_to "Grab a Table!", new_reservation_path, :method => :get , :type => "button", :class => "btn btn-success" %>
+        
+        </section>
+      <% end %>
 
     <!-- Page content -->
-    
   
-      <%= yield %>
+    <%= yield %>
     
   </div>
 
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script>
       $(function() {
           cbpBGSlideshow.init();
@@ -89,6 +111,6 @@
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
-    </script>
+  </script>
 </body>
 </html>

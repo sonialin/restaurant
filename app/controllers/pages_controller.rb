@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+
   end
 
   def about
@@ -8,9 +9,15 @@ class PagesController < ApplicationController
   def menu
   end
 
+  def specials
+  end
+
   def location
   end
 
   def contact
+  end
+
+  def jobs
   end
 end

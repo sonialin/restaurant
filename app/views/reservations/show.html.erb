@@ -1,0 +1,42 @@
+<div id="page-content-wrapper">
+  
+  <!-- Keep all page content within the page-content inset div! -->
+  <div class="page-content inset" >
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>People:</strong>
+  <%= @reservation.people %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reservation.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @reservation.time %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reservation.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @reservation.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>
+
+</div>
+      
+    </div>
+  </div>
+</div>

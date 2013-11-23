@@ -42,6 +42,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use koala to retrieve facebook page feed
+gem "koala", "~> 1.8.0rc1"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

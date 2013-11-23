@@ -1,17 +1,14 @@
-<div id="page-content-wrapper">
-	<div class="content-header">
-	  <h1>
-	   	Location
-	  </h1>
-	</div>
-
+<div id="page-content-wrapper">	
 	<!-- Keep all page content within the page-content inset div! -->
 	<div class="page-content inset" >
 	  <div class="row">
 	    <div class="col-md-8 col-md-offset-2">
-      	
-		<p>Date: <input type="text" id="datepicker" ></p>
-	    
+
+				<h1>New reservation</h1>
+				<%= render 'form' %>
+				<%= link_to 'Back', reservations_path %>
+
+	    </div>
 	  </div>
 	</div>
 </div>

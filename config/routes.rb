@@ -1,4 +1,6 @@
 Restaurant::Application.routes.draw do
+  resources :blogs
+
   resources :reservations
 
   get "home" => 'pages#home'

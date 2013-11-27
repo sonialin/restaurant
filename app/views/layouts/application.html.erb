@@ -54,7 +54,7 @@
             <li><a href="#">Menu</a></li>
             <li><%= link_to "Specials", specials_path  %></li>
             <li><a href="#">Media Coverage</a></li>
-            <li><a href="#">Reservation</a></li> 
+            <li><%= link_to "Blog", blogs_path  %></li> 
             <li><%= link_to "Jobs", jobs_path  %></li>          
         </ul>
         
@@ -67,8 +67,8 @@
           <abbr title="Phone">P:</abbr> +420 725 555 305
           </address>
           <p>
-            <i class="fa fa-facebook fa-2x"></i>
-            <i class="fa fa-foursquare fa-2x"></i>
+            <a href="https://www.facebook.com/YakuBbq"><i class="fa fa-facebook fa-2x"></i></a>
+            <a href="http://4sq.com/W5ANBw"><i class="fa fa-foursquare fa-2x"></i></a>
             <i class="fa fa-pencil fa-2x"></i>
           </p>
         </div>
@@ -83,7 +83,7 @@
       <% unless current_page?(new_reservation_path) %>
         <section id="reservation"> 
 
-        <input id="datepicker" type="text" />
+        <!-- <input id="datepicker" type="text" /> -->
         <%= link_to "Grab a Table!", new_reservation_path, :method => :get , :type => "button", :class => "btn btn-success" %>
         
         </section>

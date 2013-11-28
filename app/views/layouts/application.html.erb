@@ -47,37 +47,50 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-      <div class="sidebar-text">
-        <ul class="sidebar-nav">       
-            <li><%= link_to "Home", root_path  %></li>
-            <li><a href="about">About Us</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><%= link_to "Specials", specials_path  %></li>
-            <li><a href="#">Media Coverage</a></li>
-            <li><%= link_to "Blog", blogs_path  %></li> 
-            <li><%= link_to "Jobs", jobs_path  %></li>          
-        </ul>
-        
-        <div class="contact-info">
-          <address>
-          <strong>Yaku Japonské BBQ</strong><br>
-          Petrske náměstí 1664/5, Praha 1 <br>
-          110 00 Prague, Czech Republic
-          <br>
-          <abbr title="Phone">P:</abbr> +420 725 555 305
-          </address>
-          <p>
-            <a href="https://www.facebook.com/YakuBbq"><i class="fa fa-facebook fa-2x"></i></a>
-            <a href="http://4sq.com/W5ANBw"><i class="fa fa-foursquare fa-2x"></i></a>
-            <i class="fa fa-pencil fa-2x"></i>
-          </p>
-        </div>
+      <ul class="sidebar-nav">       
+          <li><%= link_to "Home", root_path  %></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><%= link_to "Specials", specials_path  %></li>
+          <li><a href="#">Media Coverage</a></li>
+          <li><%= link_to "Blog", blogs_path  %></li> 
+          <li><%= link_to "Jobs", jobs_path  %></li>          
+      </ul>
+      
+      <div class="contact-info">
+        <address>
+        <strong>Yaku Japonské BBQ</strong><br>
+        Petrske náměstí 1664/5, Praha 1 <br>
+        110 00 Prague, Czech Republic
+        <br>
+        <abbr title="Phone">P:</abbr> +420 725 555 305
+        </address>
+        <p>
+          <a href="https://www.facebook.com/YakuBbq"><i class="fa fa-facebook fa-2x"></i></a>
+          <a href="http://4sq.com/W5ANBw"><i class="fa fa-foursquare fa-2x"></i></a>
+          <i class="fa fa-pencil fa-2x"></i>
+        </p>
       </div>
     </div>
 
       <h1>
         <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
       </h1>
+
+      <% if session[:user_id] %>
+      
+        <nav class="navbar navbar-inverse" role="navigation" id="admin">
+          <%= link_to 'Dashboard', admin_path, :class => "navbar-brand" %>
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if current_page?(reservations_path) %>"><%= link_to 'Reservations', reservations_path %></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Customer Feedback</a></li>
+          </ul>
+          <p class="navbar-text navbar-right"><%= link_to 'Logout', logout_path, method: :delete, :class => "navbar-link" %></p>
+        </nav>
+      
+      <% end %>
 
       <!-- Hide the reservation input form if the user is already on the new reservation page -->
       <% unless current_page?(new_reservation_path) %>

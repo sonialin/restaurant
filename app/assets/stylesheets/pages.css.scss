@@ -43,6 +43,9 @@
 }
 
 .sidebar-nav {
+  display: block;
+  position: relative;
+  top: 180px;
   width: 250px;
   list-style: none;
   margin: 0;
@@ -149,9 +152,10 @@
 }
 
 .contact-info {
-	position: relative;
+  display: block;
+  position: relative;
+  top: 220px;
 	left: 20px;
-	top: 70px;
 	color: #fff;
 }
 

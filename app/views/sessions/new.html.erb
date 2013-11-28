@@ -1,0 +1,32 @@
+<div id="page-content-wrapper">
+  
+  <!-- Keep all page content within the page-content inset div! -->
+  <div class="page-content inset" >
+    <div class="row">
+      <div class="col-md-8"> 
+
+<% if flash[:alert] %>
+	<p id="notice"><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_tag do %>
+	<fieldset>
+		<legend>Please log in</legend>
+		<div>
+			<%= label_tag :name, "Name" %>
+			<%= text_field_tag :name, params[:name] %>
+		</div>
+		<div>
+			<%= label_tag :password, "Password" %>
+			<%= password_field_tag :password, params[:password] %>
+		</div>
+		<div>
+			<%= submit_tag %>
+		</div>
+	</fieldset>
+<% end %>
+
+			</div>
+    </div>
+  </div>
+</div>

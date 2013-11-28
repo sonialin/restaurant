@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :authorize, only: [:index, :show]
 
   # GET /blogs
   # GET /blogs.json

@@ -1,0 +1,28 @@
+<div id="page-content-wrapper">
+  
+  <!-- Keep all page content within the page-content inset div! -->
+  <div class="page-content inset" >
+    <div class="row">
+      <div class="col-md-8"> 
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+			</div>
+    </div>
+  </div>
+</div>

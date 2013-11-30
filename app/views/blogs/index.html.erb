@@ -15,7 +15,7 @@
     <hr>
     <img src="http://placehold.it/900x300" class="img-responsive">
     <hr>
-    <p><%= blog.description %></p>
+    <p><%= raw(blog.description) %></p>
     <%= link_to raw("Read More<span class=\'glyphicon glyphicon-chevron-right\'></span>"), blog, :class => "btn btn-primary" %>             
     <hr>
   <% end %>

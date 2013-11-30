@@ -1,13 +1,15 @@
-<div id="page-content-wrapper"> 
+<div id="page-content-wrapper">
+  
   <!-- Keep all page content within the page-content inset div! -->
   <div class="page-content inset" >
     <div class="row">
       <div class="col-md-8"> 
 
-<h1></h1>
+<h1>New job</h1>
 
-It's <%= Time.now %> <br>
+<%= render 'form' %>
 
+<%= link_to 'Back', jobs_path %>
 
 			</div>
     </div>

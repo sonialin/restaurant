@@ -1,4 +1,6 @@
 Restaurant::Application.routes.draw do
+  resources :jobs
+
   get 'admin' => "admin#index"
 
   controller :sessions do
@@ -11,15 +13,12 @@ Restaurant::Application.routes.draw do
 
   resources :blogs
 
-  resources :reservations
-
   get "home" => 'pages#home'
   get "about" => 'pages#about'
   get "menu" => 'pages#menu'
   get "specials" => 'pages#specials'
   get "location" => 'pages#location'
   get "contact" => 'pages#contact'
-  get "jobs" => 'pages#jobs'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,31 @@
+<div id="page-content-wrapper">
+  
+  <!-- Keep all page content within the page-content inset div! -->
+  <div class="page-content inset" >
+    <div class="row">
+      <div class="col-md-8"> 
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Shift:</strong>
+  <%= @job.shift %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= raw(@job.description) %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
+
+			</div>
+    </div>
+  </div>
+</div>

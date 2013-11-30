@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127123334) do
+ActiveRecord::Schema.define(version: 20131129150244) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -21,12 +21,10 @@ ActiveRecord::Schema.define(version: 20131127123334) do
     t.datetime "updated_at"
   end
 
-  create_table "reservations", force: true do |t|
-    t.integer  "people"
-    t.string   "date"
-    t.string   "time"
-    t.string   "name"
-    t.string   "phone_number"
+  create_table "jobs", force: true do |t|
+    t.string   "title"
+    t.string   "shift"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

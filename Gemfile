@@ -48,6 +48,9 @@ gem "koala", "~> 1.8.0rc1"
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# Use CKEditor for WYSIWYG blog editor
+gem 'ckeditor_rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

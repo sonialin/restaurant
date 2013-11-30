@@ -1,10 +1,10 @@
-<%= form_for(@blog) do |f| %>
-  <% if @blog.errors.any? %>
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
 
       <ul>
-      <% @blog.errors.full_messages.each do |msg| %>
+      <% @job.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -15,13 +15,13 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+  <div class="field">
+    <%= f.label :shift %><br>
+    <%= f.text_field :shift %>
+  </div>
   <div class="field" data-no-turbolink>
     <%= f.label :description %><br>
     <%= f.text_area :description, :class => 'ckeditor' %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
   </div>
   <div class="actions">
     <%= f.submit %>

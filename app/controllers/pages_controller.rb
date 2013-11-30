@@ -19,7 +19,4 @@ class PagesController < ApplicationController
 
   def contact
   end
-
-  def jobs
-  end
 end

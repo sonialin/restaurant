@@ -54,7 +54,7 @@
           <li><a href="#">Menu</a></li>
           <li><%= link_to "Specials", specials_path  %></li>
           <li><a href="#">Media Coverage</a></li>
-          <li><%= link_to "Blog", blogs_path  %></li> 
+          <li><%= link_to "Blog", "#"  %></li> 
           <li><%= link_to "Jobs", jobs_path  %></li>          
       </ul>
       
@@ -100,9 +100,20 @@
         
         </section>
 
+    <div id="page-content-wrapper">
+      <!-- Keep all page content within the page-content inset div! -->
+      <div class="page-content inset" >
+        <div class="row">
+          <div class="col-md-8"> 
+
     <!-- Page content -->
   
-    <%= yield %>
+          <%= yield %>
+
+          </div>
+        </div>
+      </div>
+    </div>
     
   </div>
 

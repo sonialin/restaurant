@@ -1,4 +1,6 @@
 Restaurant::Application.routes.draw do
+  resources :posts
+
   resources :jobs
 
   get 'admin' => "admin#index"
@@ -10,8 +12,6 @@ Restaurant::Application.routes.draw do
   end
 
   resources :users
-
-  resources :blogs
 
   get "home" => 'pages#home'
   get "about" => 'pages#about'

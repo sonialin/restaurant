@@ -51,6 +51,11 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use CKEditor for WYSIWYG blog editor
 gem 'ckeditor_rails'
 
+# Use will_paginate for post pagination
+gem 'will_paginate', '~> 3.0.5'
+# Use will_paginate-bootstrap for styling
+gem 'will_paginate-bootstrap'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

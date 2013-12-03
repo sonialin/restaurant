@@ -28,6 +28,17 @@
     });
   });
   </script>
+  <style type="text/css">
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+
+</style>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
@@ -83,7 +94,7 @@
         <nav class="navbar navbar-inverse" role="navigation" id="admin">
           <%= link_to 'Dashboard', admin_path, :class => "navbar-brand" %>
           <ul class="nav navbar-nav">
-            <li class="<%= 'active' if current_page?(jobs_path) %>"><%= link_to 'Jobs', jobs_path %></li>
+            <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to 'Blog', posts_path %></li>
             <li><a href="#">Menu</a></li>
             <li><a href="#">Customer Feedback</a></li>
           </ul>

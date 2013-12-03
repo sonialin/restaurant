@@ -1,10 +1,23 @@
+<% if session[:user_id] %>
+  <%= link_to new_post_path, :class => "btn btn-default pull-right" do %>
+    <i class="fa fa-plus"></i>&nbsp;New Post
+  <% end %>
+  <br>
+  <hr>
+<% end %>
+
 <!-- blog entry -->
 <% @posts.each do |post| %>
   <p style="font-size: 1.5em"><%= post.title %><small><br /><span class="glyphicon glyphicon-time"></span><%= post.created_at %>by Yaku</small></p>
-  
+
   <% if session[:user_id] %>
-    <p><%= link_to 'Edit', edit_post_path(post), :class => "btn btn-default" %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
+    <p>
+      <%= link_to edit_post_path(post), :class => "btn btn-default" do %>
+        <i class="fa fa-pencil"></i>&nbsp;Edit
+      <% end %>
+      <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" do %>
+        <i class="fa fa-trash-o"></i>&nbsp;Destroy
+      <% end %>
     </p>
   <% end %>
 

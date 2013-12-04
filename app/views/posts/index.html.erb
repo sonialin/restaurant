@@ -85,14 +85,16 @@
         </div>
     </div><!-- /well -->
     <div class="well">
-      <h4>Side Widget Well</h4>
-      <p>Bootstrap's default wells work great for side widgets! What is a widget anyways...?</p>
+      <h4>Archive</h4>
+      <% @recent_posts.each do |post| %>
+        <p><%= link_to post.title, post %></p>
+      <% end %>
+      <br />
+      <h4><%= link_to 'Full list of posts', archives_index_path %></h4>
     </div><!-- /well -->
   </div>
 </div>
       
-
-
 <!-- 
 
 

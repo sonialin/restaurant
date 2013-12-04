@@ -5,7 +5,6 @@
 <!-- I got these buttons from simplesharebuttons.com -->
 <div id="share-buttons">
 
-  <fb:like href="http://young-spire-4307.herokuapp.com" width="100px" layout="standard" action="like" show_faces="true" share="true"></fb:like>
 	<!-- Facebook -->
 	<a href="http://www.facebook.com/sharer.php?u=<%= request.original_url %>" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" /></a>
 	<!-- Twitter -->
@@ -64,7 +63,10 @@
         </div>
     </div><!-- /well -->
     <div class="well">
-      <p><%= @post.title %></p>
+      <h4>Recent Posts</h4>
+      <% @recent_posts.each do |post| %>
+        <p><%= link_to post.title, post %></p>
+      <% end %>
     </div><!-- /well -->
   </div>
 </div>

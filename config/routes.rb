@@ -1,4 +1,5 @@
 Restaurant::Application.routes.draw do
+  get "archives/index"
   resources :posts
 
   resources :jobs

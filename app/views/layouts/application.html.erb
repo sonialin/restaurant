@@ -50,17 +50,20 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">       
-          <li><%= link_to "Home", root_path  %></li>
-          <li><a href="about">About Us</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><%= link_to "Specials", specials_path  %></li>
-          <li><a href="#">Media Coverage</a></li>
-          <li><%= link_to "Blog", posts_path  %></li> 
+          <li><%= link_to t('.home'), root_path  %></li>
+          <li><a href="about"><%= t('.about') %></a></li>
+          <li><a href="#"><%= t('.menu') %></a></li>
+          <li><a href="#"><%= t('.specials') %></a></li>
+          <li><a href="#"><%= t('.media') %></a></li>
+          <li><%= link_to t('.blog'), posts_path  %></li> 
           <li>
             <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
-            We're Hiring!<i class="fa fa-bullhorn"></i>
+              <%= t('.job') %><i class="fa fa-bullhorn"></i>
             <% end %>
-          </li>          
+          </li> 
+          <li>
+            <%= link_to t('.reserve'), "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
+          </li>         
       </ul>
       
       <div class="contact-info">
@@ -103,8 +106,11 @@
       <!-- Hide the reservation input form if the user is already on the new reservation page -->
         <section id="reservation"> 
 
-        <!-- <input id="datepicker" type="text" /> -->
-        <%= link_to "Grab a Table!", "https://www.facebook.com/YakuBbq/app_204622046354658", :class => "btn btn-success", :target => '_blank' %>
+         <%= form_tag root_path, :class => 'locale', :method => :get do %>
+          <%= select_tag 'set_locale', 
+            options_for_select(LANGUAGES, I18n.locale.to_s),
+            onchange: 'this.form.submit()' %>
+         <% end %>
         
         </section>
 

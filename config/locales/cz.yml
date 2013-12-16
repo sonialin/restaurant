@@ -19,15 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+cz:
 
   layouts:
     application:
-      home: "Home"
-      about: "About"
-      menu: "Menu"
-      specials: "Specials"
-      media: "Media Coverage"
-      blog: "Blog"
-      job: "We're Hiring!"
-      reserve: "Grab a Table!"
+      home: "Home(cz)"
+      about: "About(cz)"
+      menu: "Menu(cz)"
+      specials: "Specials(cz)"
+      media: "Media Coverage(cz)"
+      blog: "Blog(cz)"
+      job: "We're Hiring!(cz)"
+      reserve: "Grab a Table!(cz)"

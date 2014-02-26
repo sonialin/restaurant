@@ -6,12 +6,14 @@ class PagesController < ApplicationController
   end
 
   def about
+    @title = 'About Yaku'
   end
 
   def menu
+    @title = 'Menu'
   end
 
-  def specials
+  def Specials
   end
 
   def location

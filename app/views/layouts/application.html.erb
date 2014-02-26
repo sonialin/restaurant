@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
-  <title>Restaurant</title>
+  <title><%= @title %> | Yaku BBQ Praha</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/css/bootstrap.min.css">
 
@@ -53,7 +53,6 @@
           <li><%= link_to 'Home', root_path  %></li>
           <li><a href="about">About</a></li>
           <li><a href="#">Menu</a></li>
-          <li><%= link_to 'Blog', posts_path  %></li> 
           <li><a href="#">Yaku in Media</a></li>
           <li>
             <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
@@ -64,6 +63,7 @@
             <%= link_to 'Reservation', "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
           </li>         
       </ul>
+      <br />
       
       <div class="contact-info">
         <address>

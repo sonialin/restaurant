@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="col-md-8"><!-- make room for blog naviation -->
+
 <p id="notice"><%= notice %></p>
 
 <p style="font-size: 1.5em"><%= @post.title %><small><br /><span class="glyphicon glyphicon-time"></span><%= @post.created_at %>by Yaku</small></p>
@@ -34,7 +37,8 @@
 
 <div class="col-lg-4">
     <div class="well">
-      <h4>Blog Search</h4>
+      <h4 style="color: #2E2E2E; font-size: 1.1em;">Blog Search</h4>
+      <br />
       <div class="input-group">
         <input type="text" class="form-control">
         <span class="input-group-btn">
@@ -43,32 +47,20 @@
       </div><!-- /input-group -->
     </div><!-- /well -->
     <div class="well">
-      <h4>Popular Blog Categories</h4>
-        <div class="row">
-          <div class="col-lg-6">
-            <ul class="list-unstyled">
-              <li><a href="#dinosaurs">Dinosaurs</a></li>
-              <li><a href="#spaceships">Spaceships</a></li>
-              <li><a href="#fried-foods">Fried Foods</a></li>
-              <li><a href="#wild-animals">Wild Animals</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <ul class="list-unstyled">
-              <li><a href="#alien-abductions">Alien Abductions</a></li>
-              <li><a href="#business-casual">Business Casual</a></li>
-              <li><a href="#robots">Robots</a></li>
-              <li><a href="#fireworks">Fireworks</a></li>
-            </ul>
-          </div>
-        </div>
+      <h4 style="color: #2E2E2E; font-size: 1.1em;">Blog Categories</h4>
+       
     </div><!-- /well -->
     <div class="well">
-      <h4>Recent Posts</h4>
+      <h4 style="color: #2E2E2E; font-size: 1.1em;">Archive</h4>
+      <br />
       <% @recent_posts.each do |post| %>
         <p><%= link_to post.title, post %></p>
       <% end %>
+      <br />
+      <h4><%= link_to 'Full list of posts', archives_index_path %></h4>
     </div><!-- /well -->
   </div>
 </div>
 
+  </div>
+</div>

@@ -12,8 +12,7 @@
 
 <% @post_months.sort.reverse.each do |month, posts| %>
 
-  <h3><%=h month.strftime("%B %Y") %></h3>
-  <hr>
+  <h3 class="page-header"><%=h month.strftime("%B %Y") %></h3>
   
   <% for post in posts %>
 	  <div class="row">

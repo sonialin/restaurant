@@ -36,7 +36,7 @@
   <hr>
   <%= link_to image_tag(post.image_url, :class => "img-responsive"), post %> 
   <hr>
-  <p><%= post.description %></p>
+  <p><%= raw post.description %></p>
   <br />
   <%= link_to post, :class => "btn btn-primary" do %>
     Read More<span class='glyphicon glyphicon-chevron-right'></span>

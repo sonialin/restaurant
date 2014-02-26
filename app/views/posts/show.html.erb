@@ -24,7 +24,7 @@
 <hr>
 <%= image_tag(@post.image_url, :class => "img-responsive") %> 
 <hr>
-<p><%= @post.description %></p>
+<p><%= raw @post.description %></p>
 
 <hr>
 

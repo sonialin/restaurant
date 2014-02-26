@@ -51,7 +51,7 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">       
           <li><%= link_to 'Home', root_path  %></li>
-          <li><a href="about">About</a></li>
+          <li><%= link_to 'About Yaku', about_path  %></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">Yaku in Media</a></li>
           <li>
@@ -112,15 +112,13 @@
     <div id="page-content-wrapper">
       <!-- Keep all page content within the page-content inset div! -->
       <div class="page-content inset" >
-        <div class="row">
-          <div class="col-md-8"> 
+         
 
     <!-- Page content -->
   
           <%= yield %>
 
-          </div>
-        </div>
+          
       </div>
     </div>
     

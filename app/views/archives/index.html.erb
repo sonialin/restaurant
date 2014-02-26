@@ -1,10 +1,25 @@
-<h2>Blog Archive</h2>
+<p style="font-size: 1.3em;">Blog Archives</p>
+<br />
 
-    <% @post_months.sort.reverse.each do |month, posts| %>
+   <!--  <% @post_months.sort.reverse.each do |month, posts| %>
     <h3><%=h month.strftime("%B %Y") %></h3>
     <ul>
         <% for post in posts %>
         <li><%= post.created_at.strftime("%d %b") %><%=h link_to post.title, post_path(post) %></li>
         <% end %>
     </ul>
-    <% end %>
+    <% end %> -->
+
+<% @post_months.sort.reverse.each do |month, posts| %>
+
+  <h3><%=h month.strftime("%B %Y") %></h3>
+  <hr>
+  
+  <% for post in posts %>
+	  <div class="row">
+		  <div class="col-md-3"><%= post.created_at.strftime("%d %b") %></div>
+		  <div class="col-md-9 linkcolor"><%= link_to post.title, post_path(post) %></div>
+	  </div>
+  <% end %>
+
+<% end %>

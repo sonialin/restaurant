@@ -50,19 +50,19 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">       
-          <li><%= link_to t('.home'), root_path  %></li>
-          <li><a href="about"><%= t('.about') %></a></li>
-          <li><a href="#"><%= t('.menu') %></a></li>
-          <li><a href="#"><%= t('.specials') %></a></li>
-          <li><a href="#"><%= t('.media') %></a></li>
-          <li><%= link_to t('.blog'), posts_path  %></li> 
+          <li><%= link_to 'Home', root_path  %></li>
+          <li><a href="about">About</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Specials</a></li>
+          <li><a href="#">Media</a></li>
+          <li><%= link_to 'Blog', posts_path  %></li> 
           <li>
             <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
-              <%= t('.job') %><i class="fa fa-bullhorn"></i>
+              We're Hiring!<i class="fa fa-bullhorn"></i>
             <% end %>
           </li> 
           <li>
-            <%= link_to t('.reserve'), "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
+            <%= link_to 'Reservation', "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
           </li>         
       </ul>
       
@@ -103,16 +103,12 @@
       
       <% end %>
 
-      <!-- Hide the reservation input form if the user is already on the new reservation page -->
+      <!-- 
         <section id="reservation"> 
 
-         <%= form_tag root_path, :class => 'locale', :method => :get do %>
-          <%= select_tag 'set_locale', 
-            options_for_select(LANGUAGES, I18n.locale.to_s),
-            onchange: 'this.form.submit()' %>
-         <% end %>
+         add locale here
         
-        </section>
+        </section> -->
 
     <div id="page-content-wrapper">
       <!-- Keep all page content within the page-content inset div! -->

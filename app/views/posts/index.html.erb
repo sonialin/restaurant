@@ -55,7 +55,8 @@
         
   <div class="col-lg-4">
     <div class="well">
-      <h4>Blog Search</h4>
+      <h4 style="color: #2E2E2E; font-size: 1.1em;">Blog Search</h4>
+      <br />
       <div class="input-group">
         <input type="text" class="form-control">
         <span class="input-group-btn">
@@ -64,11 +65,12 @@
       </div><!-- /input-group -->
     </div><!-- /well -->
     <div class="well">
-      <h4>Popular Blog Categories</h4>
+      <h4 style="color: #2E2E2E; font-size: 1.1em;">Blog Categories</h4>
        
     </div><!-- /well -->
     <div class="well">
-      <h4>Archive</h4>
+      <h4 style="color: #2E2E2E; font-size: 1.1em;">Archive</h4>
+      <br />
       <% @recent_posts.each do |post| %>
         <p><%= link_to post.title, post %></p>
       <% end %>

@@ -1,19 +1,17 @@
 Restaurant::Application.routes.draw do
 
-  scope '(:locale)' do
-    get "home" => 'pages#home'
-    get "about" => 'pages#about'
-    get "menu" => 'pages#menu'
-    get "specials" => 'pages#specials'
-    get "location" => 'pages#location'
-    get "contact" => 'pages#contact'
-   
-    get "archives/index"
-    resources :posts
-    # You can have the root of your site routed with "root"
-    # root 'welcome#index'
-    root 'pages#home'
-  end
+  get "home" => 'pages#home'
+  get "about" => 'pages#about'
+  get "menu" => 'pages#menu'
+  get "specials" => 'pages#specials'
+  get "location" => 'pages#location'
+  get "contact" => 'pages#contact'
+ 
+  get "archives/index"
+  resources :posts
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
+  root 'pages#home'
 
   resources :jobs
 

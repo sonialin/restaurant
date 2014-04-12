@@ -24,4 +24,8 @@ class PagesController < ApplicationController
 
   def blog
   end
+
+  def comingsoon
+    @title = 'Coming Soon'
+  end
 end

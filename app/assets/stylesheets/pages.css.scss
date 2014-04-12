@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#comingsoon {
+  background-color:rgba(255,0,0,0);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -5px;
+  margin-bottom: 0px;
+}
+
+#comingsoon-social {
+  top: -10px;
+}
+
+#coming-map {
+  height:250px;
+  width:400px;
+  overflow:hidden;
+}
 
 #logo {
 	z-index: 2000;
@@ -119,9 +136,24 @@
 
 @media (max-width:767px) {
 
-	#wrapper {
+	#coming-map {
+    height: 400px;
+    width: 320px;
+    overflow: hidden;
+    position: relative;
+    left: -10%;
+  }
+
+  #wrapper {
 	  padding-left: 0;
 	}
+
+  #page-content-wrapper {
+    width: 90%;
+    position: relative;
+    top: 160px;
+    left: 5%;
+  }
 
 	#sidebar-wrapper {
 	  left: 0;

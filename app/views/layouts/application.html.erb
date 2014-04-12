@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
-  <title><%= @title %> | Yaku BBQ Praha</title>
+  <title><%= @title %> | Yaku Japonské BBQ</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/css/bootstrap.min.css">
 
@@ -34,6 +34,8 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
+
+
   <ul class="cb-slideshow">
     <li><span>Image 01</span><div></div></li>
     <li><span>Image 02</span><div></div></li>
@@ -45,84 +47,88 @@
 
   <%= link_to (image_tag "/images/yaku_logo.png"), root_path, :id => "logo" %>
 
+  
   <div id="wrapper">
 
+    <% if !current_page?(comingsoon_path) && !current_page?(root_path) %>
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">       
-          <li><%= link_to 'Home', root_path  %></li>
-          <li><%= link_to 'About Yaku', about_path  %></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Yaku in Media</a></li>
-          <li>
-            <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
-              We're Hiring!<i class="fa fa-bullhorn"></i>
-            <% end %>
-          </li> 
-          <li>
-            <%= link_to 'Reservation', "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
-          </li>         
-      </ul>
-      <br />
-      
-      <div class="contact-info">
-        <address>
-          <strong>Yaku Japonské BBQ</strong><br>
-          Petrske náměstí 1664/5, Praha 1 <br>
-          110 00 Prague, Czech Republic <br>
-          <%= link_to '(View Map)', 'https://maps.google.com.tw/maps?q=Yaku+Japonsk%C3%A9+BBQ&ie=UTF8&fb=1&gl=tw&hq=yaku+prague&cid=5047874577531604549&t=m&z=16&iwloc=A&brcurrent=3,0x0:0x0,0', :target => '_blank', :style => 'color: #0020C2;' %>
-          <br>
-          <abbr title="Phone">P:</abbr> +420-725-555-305
-        </address>
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">       
+            <li><%= link_to 'Home', root_path  %></li>
+            <li><%= link_to 'About Yaku', about_path  %></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Yaku in Media</a></li>
+            <li>
+              <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
+                We're Hiring!<i class="fa fa-bullhorn"></i>
+              <% end %>
+            </li> 
+            <li>
+              <%= link_to 'Reservation', "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
+            </li>         
+        </ul>
+        <br />
+        
+        <div class="contact-info">
+          <address>
+            <strong>Yaku Japonské BBQ</strong><br>
+            Petrske náměstí 1664/5, Praha 1 <br>
+            110 00 Prague, Czech Republic <br>
+            <%= link_to '(View Map)', 'https://maps.google.com.tw/maps?q=Yaku+Japonsk%C3%A9+BBQ&ie=UTF8&fb=1&gl=tw&hq=yaku+prague&cid=5047874577531604549&t=m&z=16&iwloc=A&brcurrent=3,0x0:0x0,0', :target => '_blank', :style => 'color: #0020C2;' %>
+            <br>
+            <abbr title="Phone">P:</abbr> +420-725-555-305
+          </address>
 
-        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FYakuBbq&amp;width=200&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=1444896449071362" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:80px" allowTransparency="true"></iframe>
-        <!-- <p>
-          <a href="https://www.facebook.com/YakuBbq"><i class="fa fa-facebook fa-2x"></i></a>
-          <a href="http://4sq.com/W5ANBw"><i class="fa fa-foursquare fa-2x"></i></a>
-          <i class="fa fa-pencil fa-2x"></i>
-        </p> -->
+          <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FYakuBbq&amp;width=200&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=1444896449071362" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:80px" allowTransparency="true"></iframe>
+          <!-- <p>
+            <a href="https://www.facebook.com/YakuBbq"><i class="fa fa-facebook fa-2x"></i></a>
+            <a href="http://4sq.com/W5ANBw"><i class="fa fa-foursquare fa-2x"></i></a>
+            <i class="fa fa-pencil fa-2x"></i>
+          </p> -->
+        </div>
       </div>
-    </div>
 
       <h1>
         <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
       </h1>
 
-      <% if session[:user_id] %>
-      
-        <nav class="navbar navbar-inverse" role="navigation" id="admin">
-          <%= link_to 'Dashboard', admin_path, :class => "navbar-brand" %>
-          <ul class="nav navbar-nav">
-            <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to 'Blog', posts_path %></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Customer Feedback</a></li>
-          </ul>
-          <p class="navbar-text navbar-right"><%= link_to 'Logout', logout_path, method: :delete, :class => "navbar-link" %></p>
-        </nav>
-      
-      <% end %>
+    <% end %><!-- end if current page is not comingsoon -->
 
-      <!-- 
-        <section id="reservation"> 
+    <% if session[:user_id] %>
+    
+      <nav class="navbar navbar-inverse" role="navigation" id="admin">
+        <%= link_to 'Dashboard', admin_path, :class => "navbar-brand" %>
+        <ul class="nav navbar-nav">
+          <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to 'Blog', posts_path %></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Customer Feedback</a></li>
+        </ul>
+        <p class="navbar-text navbar-right"><%= link_to 'Logout', logout_path, method: :delete, :class => "navbar-link" %></p>
+      </nav>
+    
+    <% end %>
 
-         add locale here
-        
-        </section> -->
+    <!-- 
+      <section id="reservation"> 
+
+       add locale here
+      
+      </section> -->
 
     <div id="page-content-wrapper">
       <!-- Keep all page content within the page-content inset div! -->
       <div class="page-content inset" >
          
 
-    <!-- Page content -->
-  
-          <%= yield %>
+        <!-- Page content -->
+        <%= yield %>
 
           
       </div>
     </div>
     
   </div>
+  
 
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

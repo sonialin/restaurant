@@ -6,12 +6,13 @@ Restaurant::Application.routes.draw do
   get "specials" => 'pages#specials'
   get "location" => 'pages#location'
   get "contact" => 'pages#contact'
+  get "comingsoon" => 'pages#comingsoon'
  
   get "archives/index"
   resources :posts
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'posts#index'
+  root 'pages#comingsoon'
 
   resources :jobs
 

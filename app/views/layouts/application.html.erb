@@ -48,7 +48,7 @@
   
   <div id="wrapper">
 
-    <% if (!current_page?('/') && !current_page?('/cz')) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
+    <% if (!current_page?('/') && (!current_page?('/cz') && !current_page?('/en'))) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
     <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">       

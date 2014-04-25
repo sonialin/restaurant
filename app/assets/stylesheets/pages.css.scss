@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#language-switch {
+  position: relative;
+  right: -15px;
+}
+
 #comingsoon {
   background-color:rgba(255,0,0,0);
   padding-top: 0px;
@@ -11,6 +16,7 @@
 }
 
 #comingsoon-social {
+  position: relative;
   top: -10px;
 }
 

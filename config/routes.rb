@@ -1,18 +1,20 @@
 Restaurant::Application.routes.draw do
 
-  get "home" => 'pages#home'
-  get "about" => 'pages#about'
-  get "menu" => 'pages#menu'
-  get "specials" => 'pages#specials'
-  get "location" => 'pages#location'
-  get "contact" => 'pages#contact'
-  get "comingsoon" => 'pages#comingsoon'
+  scope "(:locale)", :locale => /en|cz/ do
+    get "home" => 'pages#home'
+    get "about" => 'pages#about'
+    get "menu" => 'pages#menu'
+    get "specials" => 'pages#specials'
+    get "location" => 'pages#location'
+    get "contact" => 'pages#contact'
+    get "comingsoon" => 'pages#comingsoon'
+    root :to => 'pages#comingsoon'
+  end
  
   get "archives/index"
   resources :posts
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'pages#comingsoon'
 
   resources :jobs
 
@@ -28,8 +30,6 @@ Restaurant::Application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

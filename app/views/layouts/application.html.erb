@@ -34,8 +34,6 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-
-
   <ul class="cb-slideshow">
     <li><span>Image 01</span><div></div></li>
     <li><span>Image 02</span><div></div></li>
@@ -50,13 +48,13 @@
   
   <div id="wrapper">
 
-    <% if !current_page?(comingsoon_path) && !current_page?(root_path) %>
+    <% if !current_page?('/') && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
     <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">       
-            <li><%= link_to 'Home', root_path  %></li>
+            <li><%= link_to 'Home', home_path  %></li>
             <li><%= link_to 'About Yaku', about_path  %></li>
-            <li><a href="#">Menu</a></li>
+            <li><%= link_to 'Menu', menu_path  %></li>
             <li><a href="#">Yaku in Media</a></li>
             <li>
               <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
@@ -117,8 +115,14 @@
 
     <div id="page-content-wrapper">
       <!-- Keep all page content within the page-content inset div! -->
-      <div class="page-content inset" >
-         
+      <div class="page-content inset" >      
+        <div class="pull-right">
+          <p>
+            <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+            |
+            <%= link_to_unless I18n.locale == :cz, "Czech", locale: :cz %>
+          </p>
+        </div>
 
         <!-- Page content -->
         <%= yield %>

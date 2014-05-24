@@ -48,14 +48,13 @@
   
   <div id="wrapper">
 
-    <% if (!current_page?('/') && (!current_page?('/cz') && !current_page?('/en'))) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
+    <% if (!current_page?('/')) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
     <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">       
             <li><%= link_to 'Home', home_path  %></li>
             <li><%= link_to 'About Yaku', about_path  %></li>
             <li><%= link_to 'Menu', menu_path  %></li>
-            <li><a href="#">Yaku in Media</a></li>
             <li>
               <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
                 We're Hiring!<i class="fa fa-bullhorn"></i>
@@ -113,16 +112,16 @@
       
       </section> -->
 
-    <div id="page-content-wrapper">
+    <div id="page-content-wrapper" style="positon: relative; left: 15%;">
       <!-- Keep all page content within the page-content inset div! -->
       <div class="page-content inset">      
-        <div class="pull-right" id="language-switch">
+        <!-- <div class="pull-right" id="language-switch">
           <p>
             <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
             |
             <%= link_to_unless I18n.locale == :cz, "Czech", locale: :cz %>
           </p>
-        </div>
+        </div> -->
 
         <!-- Page content -->
         <%= yield %>
@@ -132,8 +131,6 @@
     </div>
     
   </div>
-  
-
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>

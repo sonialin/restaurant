@@ -26,10 +26,10 @@ class PagesController < ApplicationController
   end
 
   def comingsoon
-    if params[:locale] == 'cz'
-      @title = 'Brzy budeme mít webovou stránku'
-    else
-      @title = 'Coming Soon'
-    end
+    # if params[:locale] == 'cz'
+    #   @title = 'Brzy budeme mít webovou stránku'
+    # else
+    #   @title = 'Coming Soon'
+    # end
   end
 end

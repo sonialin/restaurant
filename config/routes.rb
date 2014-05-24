@@ -1,6 +1,6 @@
 Restaurant::Application.routes.draw do
 
-  scope "(:locale)", :locale => /en|cz/ do
+  # scope "(:locale)", :locale => /en|cz/ do
     get "home" => 'pages#home'
     get "about" => 'pages#about'
     get "menu" => 'pages#menu'
@@ -9,7 +9,7 @@ Restaurant::Application.routes.draw do
     get "contact" => 'pages#contact'
     get "comingsoon" => 'pages#comingsoon'
     root :to => 'pages#comingsoon'
-  end
+  # end
  
   get "archives/index"
   resources :posts

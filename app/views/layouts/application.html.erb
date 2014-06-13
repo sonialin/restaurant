@@ -55,6 +55,7 @@
             <li><%= link_to 'Home', home_path  %></li>
             <li><%= link_to 'About Yaku', about_path  %></li>
             <li><%= link_to 'Menu', menu_path  %></li>
+            <li><%= link_to 'Wine List', winelist_path  %></li>
             <li>
               <%= link_to('https://www.facebook.com/YakuBbq/app_404596412628', :target => '_blank') do %>
                 We're Hiring!<i class="fa fa-bullhorn"></i>
@@ -85,10 +86,6 @@
         </div>
       </div>
 
-      <h1>
-        <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
-      </h1>
-
     <% end %><!-- end if current page is not comingsoon -->
 
     <% if session[:user_id] %>
@@ -112,9 +109,14 @@
       
       </section> -->
 
-    <div id="page-content-wrapper" style="positon: relative; left: 15%;">
+    <div id="page-content-wrapper">
       <!-- Keep all page content within the page-content inset div! -->
-      <div class="page-content inset">      
+      <div class="page-content inset"> 
+        <% if (!current_page?('/')) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
+          <h1>
+            <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
+          </h1> 
+        <% end %>    
         <!-- <div class="pull-right" id="language-switch">
           <p>
             <%= link_to_unless I18n.locale == :en, "English", locale: :en %>

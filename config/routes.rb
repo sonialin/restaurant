@@ -4,6 +4,7 @@ Restaurant::Application.routes.draw do
     get "home" => 'pages#home'
     get "about" => 'pages#about'
     get "menu" => 'pages#menu'
+    get "winelist" => 'pages#winelist'
     get "specials" => 'pages#specials'
     get "location" => 'pages#location'
     get "contact" => 'pages#contact'

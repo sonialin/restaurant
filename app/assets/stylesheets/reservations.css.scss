@@ -2,3 +2,9 @@
 	height: 500px;
 	display: none;
 }
+
+@media (max-width:767px) {
+	#bookio-iframe {
+		height: 550px;
+	}
+}

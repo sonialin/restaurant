@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
   <!-- Optional theme -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
   
   <style type="text/css">
@@ -152,6 +152,18 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
+    });
+
+    $( "#reservation-button" ).click(function() {
+      var s = "Grab a Table";
+      var r = $( "#reservation-button" ).text();
+      if (r.indexOf(s) > -1 ) {
+        $(this).html('Almost there!&nbsp;&nbsp;&nbsp;<i class="fa fa-paper-plane fa-2x"></i>');
+      } else {
+        $(this).html('Grab a Table!&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar fa-2x"></i>');
+      }
+      
+      $( "#bookio-iframe" ).toggle();
     });
   </script> 
   <%= javascript_include_tag "application" %>

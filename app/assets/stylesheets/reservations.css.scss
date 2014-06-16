@@ -4,8 +4,12 @@
 }
 
 @media (max-width:767px) {
+	#reservation-button {
+		width: 300px;
+	}
+
 	#bookio-iframe {
 		height: 550px;
-		width: 400px;
+		width: 300px;
 	}
 }

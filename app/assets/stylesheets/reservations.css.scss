@@ -5,11 +5,16 @@
 
 @media (max-width:767px) {
 	#reservation-button {
-		width: 300px;
+		width: 110%;
 	}
 
 	#bookio-iframe {
 		height: 550px;
-		width: 300px;
+		width: 110%;
+	}
+
+	#book-a-table {
+		position: relative;
+		left: -5%;
 	}
 }

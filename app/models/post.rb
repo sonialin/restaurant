@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-	attr_accessible :title, :description, :image_url
+	acts_as_taggable
 end

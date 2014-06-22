@@ -1,29 +1,49 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+
+<fieldset>
+  <legend class="text-center">Create a New Post</legend>
+  <%= form_for(@post) do |f| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <label class="col-md-3 control-label" for="title">Title</label>
+      <div class="col-md-8">
+        <%= f.text_field :title, :class=> "form-control" %>
+      </div>
+    </div>
+    <div class="field" data-no-turbolink>
+      <%= f.label :description %><br>
+      <%= f.text_area :description, :class => 'ckeditor' %>
+    </div>
+    <br />
+    <div class="form-group">
+      <label class="col-md-3 control-label" for="image_url">Image Url</label>
+      <div class="col-md-8">
+        <%= f.text_field :image_url %>
+      </div>
+    </div>
+    <br />
+    <div class="form-group">
+      <label class="col-md-3 control-label" for="tag_list">Tags</label>
+      <div class="col-md-8">
+        <%= f.text_field :tag_list, :class=> "form-control" %>
+      </div>
+    </div>
+    <br />
+    <div class="form-group">
+      <div class="col-md-11 text-right">
+        <%= f.submit "Submit", :class => "btn btn-success btn-lg" %>      
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field" data-no-turbolink>
-    <%= f.label :description %><br>
-    <%= f.text_area :description, :class => 'ckeditor' %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</fieldset>

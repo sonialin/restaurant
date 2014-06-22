@@ -41,7 +41,7 @@
   <hr>
   <p><%= raw post.description %></p>
   <br />
-  <%= link_to post, :class => "btn btn-primary" do %>
+  <%= link_to post, :class => "btn btn-success" do %>
     Read More<span class='glyphicon glyphicon-chevron-right'></span>
   <% end %>
             
@@ -57,8 +57,8 @@
 </div>
         
   <div class="col-lg-4">
-    <div class="well">
-      <h4 style="color: #2E2E2E; font-size: 1.1em;">Blog Search</h4>
+    <div class="well yaku-well">
+      <h4>Blog Search</h4>
       <br />
       <div class="input-group">
         <input type="text" class="form-control">
@@ -67,18 +67,18 @@
         </span>
       </div><!-- /input-group -->
     </div><!-- /well -->
-    <div class="well">
-      <h4 style="color: #2E2E2E; font-size: 1.1em;">Blog Categories</h4>
+    <div class="well yaku-well">
+      <h4>Blog Categories</h4>
        
     </div><!-- /well -->
-    <div class="well">
-      <h4 style="color: #2E2E2E; font-size: 1.1em;">Archive</h4>
+    <div class="well yaku-well">
+      <h4>Archive</h4>
       <br />
       <% @recent_posts.each do |post| %>
         <p><%= link_to post.title, post %></p>
       <% end %>
       <br />
-      <h4><%= link_to 'Full list of posts', archives_index_path %></h4>
+      <span><%= link_to 'Blog Archive', archives_index_path %></span>
     </div><!-- /well -->
   </div>
 </div>

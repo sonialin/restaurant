@@ -11,7 +11,7 @@
 
 <!-- blog entry -->
 <% @posts.each do |post| %>
-  <p style="font-size: 1.5em"><%= post.title %><small><br /><span class="glyphicon glyphicon-time"></span><%= post.created_at %>by Yaku</small></p>
+  <p style="font-size: 1.5em"><%= post.title %><small><br /><i class="fa fa-clock-o"></i>&nbsp;<%= reformatted_post_datetime(post.created_at) %>&nbsp;by Yaku</small></p>
 
   <!-- I got these buttons from simplesharebuttons.com -->
   <div id="share-buttons">

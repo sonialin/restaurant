@@ -59,6 +59,9 @@ gem 'will_paginate-bootstrap'
 # Use acts as taggable on for post categorization
 gem 'acts-as-taggable-on'
 
+# Use devise for backend
+gem 'devise'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

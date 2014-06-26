@@ -1,5 +1,6 @@
 Restaurant::Application.routes.draw do
 
+  devise_for :users
   # scope "(:locale)", :locale => /en|cz/ do
     get "home" => 'pages#home'
     get "about" => 'pages#about'

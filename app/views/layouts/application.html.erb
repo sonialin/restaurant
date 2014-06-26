@@ -45,10 +45,9 @@
 
   <%= link_to (image_tag "/images/yaku_logo.png"), root_path, :id => "logo" %>
 
-  
   <div id="wrapper">
 
-    <% if (!current_page?('/')) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
+    <% if (!current_page?('/')) && !current_page?(:controller => '/pages', :action => 'comingsoon') %>
     <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">       
@@ -88,16 +87,13 @@
 
     <% end %><!-- end if current page is not comingsoon -->
 
-    <% if session[:user_id] %>
-    
+    <% if current_user %>
       <nav class="navbar navbar-inverse" role="navigation" id="admin">
-        <%= link_to 'Dashboard', admin_path, :class => "navbar-brand" %>
+        <%= link_to 'Dashboard', '#', :class => "navbar-brand" %>
         <ul class="nav navbar-nav">
           <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to 'Blog', posts_path %></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Customer Feedback</a></li>
         </ul>
-        <p class="navbar-text navbar-right"><%= link_to 'Logout', logout_path, method: :delete, :class => "navbar-link" %></p>
+        <p class="navbar-text navbar-right"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-link" %></p>
       </nav>
     
     <% end %>
@@ -112,7 +108,7 @@
     <div id="page-content-wrapper">
       <!-- Keep all page content within the page-content inset div! -->
       <div class="page-content inset"> 
-        <% if (!current_page?('/')) && !current_page?(:controller => 'pages', :action => 'comingsoon') %>
+        <% if (!current_page?('/')) && !current_page?(:controller => '/pages', :action => 'comingsoon') %>
           <h1>
             <a id="menu-toggle" href="#" class="btn btn-default"><i class="fa fa-bars"></i></a>
           </h1> 

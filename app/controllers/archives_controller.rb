@@ -1,5 +1,4 @@
 class ArchivesController < ApplicationController
-	skip_before_filter :authorize
   def index
   	@title = 'Blog Archives'
   	@posts = Post.all(:select => "title, id, created_at", :order => "created_at DESC")

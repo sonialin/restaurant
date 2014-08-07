@@ -1,7 +1,9 @@
 <p class="lead" style="font-size: 1.5em">About Yaku</p>
-<p class="lead">"Yaku焼く" means to grill in Japanese!! Common Japanese style of Yakiniku (焼き肉 or 焼肉), drawing influences from Korean dishes such as bulgogi and galbi, became widespread in Japan during the 20th century, most notably after the Second World War. 
-
-Today, Yakiniku has became one of the popular dining style in Japan. The meat are specialized prepared sliced according to designated part of Beef/pork/Chicken, plus the charcoal heated grill to keep the juice within every BBQ meat! 
-
-Our mega unit ventilation system has keep our customer enjoy food in smoke-free enviorment! Yaku is a modern Asian fusion atmosphere bar restaurant with traditional taste of Japan! Come and enjoy the Difference! </p>
-	    
+<% if current_user %>
+  <p>
+    <%= link_to edit_editable_page_path(@editablepage), :class => "btn btn-default" do %>
+      <i class="fa fa-pencil"></i>&nbsp;Edit
+    <% end %>
+  </p>
+<% end %>
+<p class="lead"><%= raw @editablepage.description %></p>

@@ -1,0 +1,27 @@
+<fieldset>
+  <legend class="text-center">Edit</legend>
+  <%= form_for(@editablepage) do |f| %>
+    <% if @editablepage.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@editablepage.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+        <% @editablepage.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field" data-no-turbolink>
+      <%= f.label :description %><br>
+      <%= f.text_area :description, :class => 'ckeditor' %>
+    </div>
+    <br />
+    <div class="form-group">
+      <div class="col-md-11 text-right">
+        <%= f.submit "Submit", :class => "btn btn-success btn-lg" %>      
+      </div>
+    </div>
+  <% end %>
+</fieldset>

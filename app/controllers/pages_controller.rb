@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def about
     @title = 'About Yaku'
+    @editablepage = EditablePage.find(1)
   end
 
   def menu

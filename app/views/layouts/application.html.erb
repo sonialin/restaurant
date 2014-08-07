@@ -61,7 +61,7 @@
               <% end %>
             </li> 
             <li>
-              <%= link_to 'Reservation', "https://www.facebook.com/YakuBbq/app_204622046354658", :target => '_blank' %>
+              <%= link_to 'Reservation', "http://www.neptunio.cz/en/yaku-japonske-bbq/rs-widget", :target => '_blank' %>
             </li>         
         </ul>
         <br />
@@ -93,7 +93,7 @@
         <ul class="nav navbar-nav">
           <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to 'Blog', posts_path %></li>
         </ul>
-        <p class="navbar-text navbar-right"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-link" %></p>
+        <p class="navbar-text"><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-link" %></p>
       </nav>
     
     <% end %>
